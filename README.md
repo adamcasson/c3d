@@ -18,20 +18,17 @@ import skvideo.io
 from c3d import C3D
 from sports1M_utils import preprocess_input, decode_predictions
 
-# Load an instance of pre-trained C3D model
-model = C3D(weights=‘sports1M’)
+model = C3D(weights='sports1M')
 
-vid_path = ‘homerun.mp4’
-# Loads video in as numpy array
+vid_path = 'homerun.mp4'
 vid = skvideo.io.vread(vid_path)
 # Select 16 frames from video
 vid = vid[40:56]
-# Resize and subtract mean from video frames
 x = preprocess_input(vid)
 
 preds = model.predict(x)
-print(‘Predicted:’, decode_predictions(preds))
-#Predicted: [(‘baseball’, 0.91488838)]
+print('Predicted:', decode_predictions(preds))
+#Predicted: [('baseball', 0.91488838)]
 ```
 
 ### Extract features from videos
@@ -42,16 +39,13 @@ from c3d import C3D
 from keras.models import Model
 from sports1M_utils import preprocess_input, decode_predictions
 
-# Load an instance of pre-trained C3D model
-base_model = C3D(weights=‘sports1M’)
-model = Model(inputs=base_model.input, outputs=base_model.get_layer(‘fc6’).output)
+base_model = C3D(weights='sports1M')
+model = Model(inputs=base_model.input, outputs=base_model.get_layer('fc6').output)
 
-vid_path = ‘bonds.mp4’
-# Load video in as numpy array
+vid_path = ‘homerun.mp4'
 vid = skvideo.io.vread(vid_path)
 # Select 16 frames from video
 vid = vid[40:56]
-# Resize and subtract mean from video frames
 x = preprocess_input(vid)
 
 features = model.predict(x)
