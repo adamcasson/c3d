@@ -3,7 +3,7 @@ C3D for Keras 2.0 (only Tensorflow backend at the moment) with easy preprocessin
 
 ## Requirements
 * Python 2 or 3
-* Keras 2.0+
+* Keras 2.0+ (TensorFlow backend)
 * skvideo
   * ffmpeg
 * scipy
