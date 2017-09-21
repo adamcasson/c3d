@@ -1,7 +1,7 @@
 # Easy C3D for Keras
 C3D for Keras 2.0 (only Tensorflow backend at the moment) with easy preprocessing and automatic downloading of TF format sports1M weights
 
-DISLAIMER: These converted weights have not been fully tested and may differe somewhat from the original Caffe weights released by the C3D authors. Use at your own risk.
+DISLAIMER: These converted weights have not been fully tested and may differ somewhat from the original Caffe weights released by the C3D authors. Use at your own risk.
 
 ## Requirements
 * Python 2 or 3
